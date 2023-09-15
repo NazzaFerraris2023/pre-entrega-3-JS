@@ -1,0 +1,22 @@
+/* Light Mode */
+body{
+    background-color: pink;
+}
+h1{
+    text-align: center;
+    text-decoration: underline;
+}
+#carrito h4{
+    text-decoration: underline;
+    font-size: 30px;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+#carrito h5{
+    text-decoration: underline;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
