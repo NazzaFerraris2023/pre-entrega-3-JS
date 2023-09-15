@@ -1,24 +1,24 @@
 const lista_productos = [{
     Id:1,
-    Foto:"./fotos/linea-mateAva/Mate-Ava-rosa.jpeg",
+    Foto:"fotos/linea-mateAva/MAteAva-Rosa.jpeg",
     Nombre:"Mate Ava Rosa",
     Precio:1500,
 },
 {
     Id:2,
-    Foto:"fotos/linea-mateAva/Mate-Ava-Verde.jpeg",
+    Foto:"/fotos/linea-mateAva/MateAva-Verde.png",
     Nombre:"Mate Ava Verde",
     Precio:1700,
 },
 {
     Id:3,
-    Foto:"./fotos/linea-mateAva/Mate-Avs-Azul.jpeg",
+    Foto:"./fotos/linea-mateAva/MateAva-Azul.png",
     Nombre:"Mate Ava Azul",
     Precio:1900,
 },
 {
     Id:4,
-    Foto:"fotos/Mate-Criollo/Mate-criollo-azul.jpeg",
+    Foto:"fotos/Mate-Criollo/Mate-Criollo-azul.png",
     Nombre:"Mate Criollo Azul",
     Precio:2500,
 },

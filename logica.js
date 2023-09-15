@@ -1,41 +1,62 @@
-//productos del carrito:
+//llamando al div para poder inyectarle los productos a la pagina
+const contenedor_lista_productos = document.getElementById("contenedor_productos");
+//paso 1 del mostrando el carrito en la consola:
+const tabla_Carrito=document.getElementById("tabla_Carrito")
 
-const contenedor_productos = document.getElementById("productos")
-const tabla_body = document.getElementById("tablaCarrito")
-
-/*Creando la funcion:
-Esta funcion se va a encargar de recibir un array de productos y por cada producto va a generar una card con esas caracteristicas.
+let carrito =[]
+/*Dentro del algorito para crear los productos
+Paso 1:Debo crear un div que contenga el producto
+Paso 2: Crear contenido Html adentro del div (con innerHTML)
+Paso 3: Agregar el div para que aparezca en la pagina web (debo tener un div padre en el html)
+Paso 3.5: Crear una nueva variable en JS para poder capturar con el getelementbyid() el div padre
+Paso 4: Colocar los productos en la nueva variable que esta conectada al div padre
 */
 
-function renderizando_productos (lista_productos){
-    for (const producto of lista_productos){
-        contenedor_productos.innerHTML+=
-        `
-        <div class="card" style="width: 18rem;">
-        <img src=${producto.Foto} class="card-img" alt=${producto.Nombre}/>
-            <div class="card-body">
-                <h5 class="card-title">${producto.Nombre}</h5>
-                <p class="card-text">${producto.Precio}</p>
-                <button id=${producto.Id} class="btn-compra">Comprar!</button>
-            </div>
-    </div
-        `
-    }
-}
 
-//Definiendo eventos para los botones:
-let btn = document.getElementsByClassName("btn-compra")
+lista_productos.forEach((producto)=>{
+let contenedor_producto=document.createElement("div")
+contenedor_producto.className="contenedor_productos"
 
-for(const botones of btn ){
-    botones.addEventListener("click",()=>{
-        console.log("Hiciste click en el id numero:"+botones.id)
- // creo una constante para colocar un .find asi puedo poner el nombre del producto que va a pasar al carrito
-        const productos_a_carrito = lista_productos.find((producto)=>producto.id==botones.id)
-        console.log(productos_a_carrito)
-        //Agregando producto encontrado al carrito
-            //Creo una funcion que todavia no esta creada para poder guardar el producto en el carrito
-        productos_en_Carrito(productos_a_carrito)//Funcion en donde voy a guardar los productos destinados al carrito
+    contenedor_producto.innerHTML=`
+        <img src="${producto.Foto}" class="img_producto">
+        <h3 class="nombre_producto">${producto.Nombre}</h3>
+        <p class="precio_producto">$${producto.Precio}</p>
+    `;
+
+    contenedor_lista_productos.append(contenedor_producto)
+
+//Creando boton para comprar el producto: (Son los mismos pasos que se realizo antes)
+let btn_comprar= document.createElement("button")
+//innerText---> va a permitirme colocar texto a las etiquetas
+    btn_comprar.innerText="Comprar!"
+    btn_comprar.className="btn"
+
+    contenedor_producto.append(btn_comprar)
+
+    //dandole funcionalidad a los botones (eventos)
+    btn_comprar.addEventListener("click",()=>{
+        carrito.push({
+            Id:producto.id,
+            Nombre:producto.Nombre,
+            Precio:producto.Precio,
+        })
+        
     })
+//Mostrando el carrito en consola:
 
+
+}) 
+
+function mostrando_carrito(producto){
+    carrito.push(producto)
+    tabla_Carrito.innerHTML+=`
+    <tr>
+    <td>${producto.Id}</td>
+    <td>${producto.Nombre}</td>
+    <td>$${producto.Precio}</td>
+    </tr>
+    `
 }
+
+
 

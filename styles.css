@@ -20,3 +20,53 @@ h1{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
 }
+/* div padre */
+.estilos_productos{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-left:80px;
+    margin-right:80px;
+
+}
+/* div hijo */
+.contenedor_productos{
+    background-color: aliceblue;
+    padding: .5em;
+    margin-bottom: 1.2em;
+    border-radius: 20px;    
+}
+.contenedor_productos:hover{
+    transition: 0.6s;
+    transform: scale(1.1);
+}
+/* imagenes */
+.img_producto{
+    width: 15rem;
+    border-radius: 20px;
+}
+/* h3 */
+.nombre_producto{
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: lighter;
+    font-family: fantasy;
+}
+/* p */
+.precio_producto{
+    font-family: fantasy;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 1.5em;
+}
+/* btn */
+.btn{
+    border-radius: 20px;
+    background-color: yellow;
+    transform: translateX(85px);
+    padding: .5em;
+}
+.btn:hover{
+    background-color: rgba(255, 157, 0, 0.861);
+}
