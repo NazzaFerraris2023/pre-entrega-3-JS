@@ -1,3 +1,15 @@
+/* BTN darkmode */
+#dark_mode{
+    border-radius: 20px;
+    margin-left: 1em;
+    text-transform: capitalize;
+    background-color: transparent;
+}
+#dark_mode:hover{
+    background-color: rgb(250, 96, 122);
+}
+
+
 /* Light Mode */
 body{
     background-color: pink;
@@ -33,7 +45,7 @@ h1{
 /* div hijo */
 .contenedor_productos{
     background-color: aliceblue;
-    padding: .5em;
+    padding: 1em;
     margin-bottom: 1.2em;
     border-radius: 20px;    
 }
@@ -70,3 +82,5 @@ h1{
 .btn:hover{
     background-color: rgba(255, 157, 0, 0.861);
 }
+
+

@@ -3,6 +3,7 @@ const contenedor_lista_productos = document.getElementById("contenedor_productos
 //paso 1 del mostrando el carrito en la consola:
 const tabla_Carrito=document.getElementById("tabla_Carrito")
 
+
 let carrito =[]
 /*Dentro del algorito para crear los productos
 Paso 1:Debo crear un div que contenga el producto
@@ -36,27 +37,34 @@ let btn_comprar= document.createElement("button")
     //dandole funcionalidad a los botones (eventos)
     btn_comprar.addEventListener("click",()=>{
         carrito.push({
-            Id:producto.id,
+            Id:producto.Id,
             Nombre:producto.Nombre,
             Precio:producto.Precio,
         })
-        
+        console.log(carrito)
+        mostrando_carrito()
     })
-//Mostrando el carrito en consola:
+
+
 
 
 }) 
 
-function mostrando_carrito(producto){
-    carrito.push(producto)
-    tabla_Carrito.innerHTML+=`
-    <tr>
-    <td>${producto.Id}</td>
-    <td>${producto.Nombre}</td>
-    <td>$${producto.Precio}</td>
-    </tr>
-    `
+function mostrando_carrito(){
+    tabla_Carrito.innerHTML=""
+    carrito.forEach(producto=>{
+        tabla_Carrito.innerHTML+=`
+        <tr> 
+        <td>${producto.Id}</td>
+        <td>${producto.Nombre}</td>
+        <td>$${producto.Precio}</td>
+        </tr>
+        `
+    })
+        
 }
 
 
 
+
+// boton dark-light mode
