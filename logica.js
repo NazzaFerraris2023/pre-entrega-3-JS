@@ -43,6 +43,7 @@ let btn_comprar= document.createElement("button")
         })
         console.log(carrito)
         mostrando_carrito()
+        calculando_precio_final_carrito()
     })
 
 
@@ -50,6 +51,7 @@ let btn_comprar= document.createElement("button")
 
 }) 
 
+//Funciones:
 function mostrando_carrito(){
     tabla_Carrito.innerHTML=""
     carrito.forEach(producto=>{
@@ -64,6 +66,13 @@ function mostrando_carrito(){
         
 }
 
+function calculando_precio_final_carrito(){
+    const precio_final=carrito.reduce((acc,el)=>acc+=el.Precio,0)
+    console.log(precio_final)
+
+    const precio_final_dom=document.getElementById("saldo-total")
+    precio_final_dom.textContent=`El precio final de su compra es de:$${precio_final}`
+}
 
 
 
