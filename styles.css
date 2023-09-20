@@ -1,17 +1,6 @@
-/* BTN darkmode */
-#dark_mode{
-    border-radius: 20px;
-    margin-left: 1em;
-    text-transform: capitalize;
-    background-color: transparent;
-}
-#dark_mode:hover{
-    background-color: rgb(250, 96, 122);
-}
-
 
 /* Light Mode */
-body{
+#light{
     background-color: pink;
 }
 h1{
@@ -81,5 +70,24 @@ h1{
 }
 .btn:hover{
     background-color: rgba(255, 157, 0, 0.861);
+}
+
+/* BTN darkmode */
+#dark_mode_btn{
+    border-radius: 20px;
+    margin-left: 1em;
+    text-transform: capitalize;
+    background-color: transparent;
+}
+#dark_mode_btn:hover{
+    background-color: rgb(250, 96, 122);
+}
+
+/* Dark mode */
+
+.dark h1{
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(233, 151, 44);
 }
 

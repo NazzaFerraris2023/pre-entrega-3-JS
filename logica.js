@@ -76,4 +76,28 @@ function calculando_precio_final_carrito(){
 
 
 
-// boton dark-light mode
+
+const contenedor = document.getElementById("light");
+const dark_mode = document.getElementById("dark_mode_btn");
+
+const isDarkMode = sessionStorage.getItem("darkMode");
+
+function cambiando_dark() {
+    if (contenedor.classList.contains("light")) {
+        // Cambia al modo oscuro
+        contenedor.classList.replace("light", "dark");
+        // Guarda la configuración en el Session Storage
+        sessionStorage.setItem("darkMode", "true");
+    } else {
+        // Cambia al modo claro
+        contenedor.classList.replace("dark", "light");
+        // Elimina la configuración del Session Storage
+        sessionStorage.removeItem("darkMode");
+    }
+}
+
+
+// Agrega el evento click al botón de modo oscuro
+dark_mode.onclick = () => {
+    cambiando_dark();
+};
